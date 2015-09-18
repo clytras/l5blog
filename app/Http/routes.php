@@ -28,7 +28,7 @@ $router->group([
     'namespace' => 'Admin',
     'middleware' => 'auth',
 ], function () {
-    Route::resource('admin/post', 'PostController');
+    Route::resource('admin/post', 'PostController', ['except' => 'show']);
     Route::resource('admin/tag', 'TagController', ['except' => 'show']);
 
     Route::get('admin/upload', 'UploadController@index');
