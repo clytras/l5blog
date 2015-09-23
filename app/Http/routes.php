@@ -13,7 +13,7 @@
 
 // Blog pages
 Route::get('/', function () {
-    return Route::redirect('/blog');
+    return redirect('/blog');
 });
 
 Route::get('blog', 'BlogController@index');

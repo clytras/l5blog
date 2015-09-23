@@ -15,6 +15,7 @@
     "font-awesome": "fontawesome#~4.4.0",
     "jquery": "~2.1.4",
     "pickadate": "~3.5.6",
-    "selectize": "~0.12.1"
+    "selectize": "~0.12.1",
+    "clean-blog": "~1.0.1"
   }
 }
