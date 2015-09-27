@@ -6,6 +6,7 @@ return [
     'subtitle' => 'A clean blog written in Laravel 5.1',
     'description' => 'This is my meta description',
     'author' => 'Christos Lytras',
+    'contact_email' => 'christos.lytras@gmail.com',
     'page_image' => 'main-bg.jpg',
     'posts_per_page' => 10,
     'uploads' => [
