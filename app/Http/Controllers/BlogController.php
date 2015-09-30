@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Tag;
 use App\Post;
 use App\Http\Requests;
+use App\Services\RssFeed;
+use App\Services\SiteMap;
 use App\Jobs\BlogIndexData;
 use Illuminate\Http\Request;
 
@@ -27,6 +29,20 @@ class BlogController extends Controller
             $tag = Tag::whereTag($tag)->firstOrFail();
         }
     
-        return view($post->layout, compact('post', 'tag'));
+        return view($post->layout, compact('post', 'tag', 'slug'));
+    }
+    
+    public function rss(RssFeed $feed)
+    {
+        $rss = $feed->getRSS();
+        
+        return response($rss)->header('Content-type', 'application/rss+xml');
+    }
+    
+    public function siteMap(SiteMap $siteMap)
+    {
+        $map = $siteMap->getSiteMap();
+        
+        return response($map)->header('Content-type', 'text/xml');
     }
 }
